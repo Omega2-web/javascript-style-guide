@@ -9,7 +9,7 @@ use that and adjust it.
 
 This guide was originally created by [Felix Geisendörfer](http://felixge.de/) and 
 is licensed under the [CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/)
-license. It has been modified to suit the prefernces of the Symphono development 
+license. It has been modified to suit the preferences of the Symphono development 
 team.
 
 ## Table of contents
@@ -28,6 +28,12 @@ team.
 * [Use UPPERCASE for Constants](#use-uppercase-for-constants)
 * [Object / Array creation](#object--array-creation)
 * [Use the === operator](#use-the--operator)
+* [Do not extend built-in prototypes](#do-not-extend-built-in-prototypes)
+* [Use descriptive conditions](#use-descriptive-conditions)
+* [Write small functions](#write-small-functions)
+* [Return early from functions](#return-early-from-functions)
+* [Name your closures](#name-your-closures)
+* [No nested closures](#no-nested-closures)
 
 ## 1 Tab for indention
 
