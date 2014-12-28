@@ -1,23 +1,20 @@
-# Node.js Style Guide
+# JavaScript Style Guide
 
-This is a guide for writing consistent and aesthetically pleasing node.js code.
+This is a guide for writing consistent and aesthetically pleasing JavaScript code.
 It is inspired by what is popular within the community, and flavored with some
 personal opinions.
 
 There is a .jshintrc which enforces these rules as closely as possible. You can
-either use that and adjust it, or use
-[this script](https://gist.github.com/kentcdodds/11293570) to make your own.
+use that and adjust it.
 
-This guide was created by [Felix Geisendörfer](http://felixge.de/) and is
-licensed under the [CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/)
-license. You are encouraged to fork this repository and make adjustments
-according to your preferences.
-
-![Creative Commons License](http://i.creativecommons.org/l/by-sa/3.0/88x31.png)
+This guide was originally created by [Felix Geisendörfer](http://felixge.de/) and 
+is licensed under the [CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/)
+license. It has been modified to suit the prefernces of the Symphono development 
+team.
 
 ## Table of contents
 
-* [2 Spaces for indention](#2-spaces-for-indention)
+* [1 tab for indention](#1-tab-for-indention)
 * [Newlines](#newlines)
 * [No trailing whitespace](#no-trailing-whitespace)
 * [Use Semicolons](#use-semicolons)
@@ -31,15 +28,14 @@ according to your preferences.
 * [Use UPPERCASE for Constants](#use-uppercase-for-constants)
 * [Object / Array creation](#object--array-creation)
 * [Use the === operator](#use-the--operator)
-* [Use multi-line ternary operator](#use-multi-line-ternary-operator)
-* [Use slashes for comments](#use-slashes-for-comments)
-* [Object.freeze, Object.preventExtensions, Object.seal, with, eval](#objectfreeze-objectpreventextensions-objectseal-with-eval)
-* [Getters and setters](#getters-and-setters)
 
-## 2 Spaces for indention
+## 1 Tab for indention
 
-Use 2 spaces for indenting your code and swear an oath to never mix tabs and
-spaces - a special kind of hell is awaiting you otherwise.
+Use 1 tab for indenting your code and swear an oath to never mix tabs and
+spaces - a special kind of hell is awaiting you otherwise. How large of an
+indent you make a tab appear to take in your editor is your own business.
+Make it 8. Make it 4. Make it 2. I don't care. I will do what I like. Tabs
+give me that option.
 
 ## Newlines
 
@@ -306,24 +302,6 @@ if (a == '') {
 
 [comparisonoperators]: https://developer.mozilla.org/en/JavaScript/Reference/Operators/Comparison_Operators
 
-## Use multi-line ternary operator
-
-The ternary operator should not be used on a single line. Split it up into multiple lines instead.
-
-*Right:*
-
-```js
-var foo = (a === b)
-  ? 1
-  : 2;
-```
-
-*Wrong:*
-
-```js
-var foo = (a === b) ? 1 : 2;
-```
-
 ## Do not extend built-in prototypes
 
 Do not extend the prototype of native JavaScript objects. Your future self will
@@ -472,61 +450,3 @@ setTimeout(function() {
   });
 }, 1000);
 ```
-
-## Use slashes for comments
-
-Use slashes for both single line and multi line comments. Try to write
-comments that explain higher level mechanisms or clarify difficult
-segments of your code. Don't use comments to restate trivial things.
-
-*Right:*
-
-```js
-// 'ID_SOMETHING=VALUE' -> ['ID_SOMETHING=VALUE', 'SOMETHING', 'VALUE']
-var matches = item.match(/ID_([^\n]+)=([^\n]+)/));
-
-// This function has a nasty side effect where a failure to increment a
-// redis counter used for statistics will cause an exception. This needs
-// to be fixed in a later iteration.
-function loadUser(id, cb) {
-  // ...
-}
-
-var isSessionValid = (session.expires < Date.now());
-if (isSessionValid) {
-  // ...
-}
-```
-
-*Wrong:*
-
-```js
-// Execute a regex
-var matches = item.match(/ID_([^\n]+)=([^\n]+)/));
-
-// Usage: loadUser(5, function() { ... })
-function loadUser(id, cb) {
-  // ...
-}
-
-// Check if the session is valid
-var isSessionValid = (session.expires < Date.now());
-// If the session is valid
-if (isSessionValid) {
-  // ...
-}
-```
-
-## Object.freeze, Object.preventExtensions, Object.seal, with, eval
-
-Crazy shit that you will probably never need. Stay away from it.
-
-## Getters and setters
-
-Do not use setters, they cause more problems for people who try to use your
-software than they can solve.
-
-Feel free to use getters that are free from [side effects][sideeffect], like
-providing a length property for a collection class.
-
-[sideeffect]: http://en.wikipedia.org/wiki/Side_effect_(computer_science)
