@@ -4,12 +4,11 @@ This is a guide for writing consistent and aesthetically pleasing JavaScript cod
 It is inspired by what is popular within the community, and flavored with some
 personal opinions.
 
-There is a .jshintrc which enforces these rules as closely as possible. You can
+There is a .jshintrc and .ESLintrc which enforces these rules as closely as possible. You can
 use that and adjust it.
 
-This guide was originally created by [Felix Geisendörfer](http://felixge.de/) and 
-is licensed under the [CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/)
-license. It has been modified to suit the preferences of the Symphono development 
+This guide was originally created by [Felix Geisendörfer](http://felixge.de/) and contributed to by the Symphono team, and is licensed under the [CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/)
+license. It has been modified to suit the preferences of the CRUX Informatics development 
 team.
 
 ## Table of contents
@@ -23,6 +22,7 @@ team.
 * [Opening braces go on the same line](#opening-braces-go-on-the-same-line)
 * [Method chaining](#method-chaining)
 * [Declare one variable per var statement](#declare-one-variable-per-var-statement)
+* [Better yet, just never use var keyword (unless you absolutely have to)](#just-never-use-var)
 * [Use lowerCamelCase for variables, properties and function names](#use-lowercamelcase-for-variables-properties-and-function-names)
 * [Use UpperCamelCase for class names](#use-uppercamelcase-for-class-names)
 * [Use UPPERCASE for Constants](#use-uppercase-for-constants)
@@ -188,6 +188,36 @@ while (keys.length) {
 ```
 
 [crockfordconvention]: http://javascript.crockford.com/code.html
+
+## Just never use var
+
+Although the above standard still applies to any variable declaration, if you are using ES6 there is no need to use the var keyword anymore now that we have let and const. Really, the only reason to still use var is for compatibility reasons for older browsers that don't recognize let or const, and where you don't have access to something like Babel. Ultimately, although var is function scoped while let is block scoped, if you want function scope you can just use let at the top of a function, which is what you SHOULD do with var anyhow when seeking function scope to make it's scope clear and avoid confusion from hoisting. 
+
+```
+function someFunction() {
+  let someVariable = 'This will work just fine, and is much less confusing than the following(for multiple reasons =)'
+  (function() {
+    //var someVariable; 
+    if(true) {
+      var someVariable = 'If I want function scope here, then why not explicitly declare this above as is secretly happening.' 
+    }
+  )()
+}
+```
+
+```
+function someFunction() {
+  (function() {
+    let someVariable;
+    if(true) {
+      someVariable = 'let will just help us always be explicit when our desire is function scope in this way.'
+    }
+    console.log(someVariable)
+  })()
+}
+```
+
+[Stack Overflow discussion about var]: https://softwareengineering.stackexchange.com/questions/274342/is-there-any-reason-to-use-the-var-keyword-in-es6
 
 ## Use lowerCamelCase for variables, properties and function names
 
