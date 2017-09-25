@@ -1,0 +1,17 @@
+# editorconfig.org
+# In order for this file to work the plugin for your respective editor must be loaded from the above website. The editorconfig
+# file then must be placed in your projects root directory.
+# When opening a file EditorConfig editor plugins will look for a file named .editorconfig in the directory of the opened file
+# and then in every parent directory until either the computers root directory is reached, or a .editorconfig file with root=true 
+# is reached. Files then are read similar to cascading style sheets from farthest to closest, with the closest to a files directory 
+# taking precedence. 
+# These comments can (and should) of course be removed when you put the file in your project 
+
+root = true
+
+[*]
+charset = utf-8
+insert_final_newline = true
+trim_trailing_whitespace = true
+end_of_line = lf
+indent_style = tab
