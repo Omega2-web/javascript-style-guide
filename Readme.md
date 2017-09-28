@@ -9,7 +9,7 @@ license. It has been modified to suit the preferences of the CRUX Informatics de
 team.
 
 There is the original .jshintrc and .ESLintrc which enforces these rules as closely as possible. You can
-use that and adjust it. We also have created an .eslintrcMaximum and a .eslintMinimum which include some additional rules. eslintrcMinimum is intended for checking the bare minimum and omit stylistic things, and eslintrcMaximum has absolutely everything. Both .eslintrcMinimum and .eslintMaximum depend on an additional dependency called eslint-plugin-require-path-exists which must be npm installed before use into your package.json. This checks paths to ensure the items you are require("somepackage"), actually exist.
+use that and adjust it. We also have created an .eslintrcMaximum and a .eslintMinimum which include some additional rules. eslintrcMinimum is intended for checking the bare minimum and omit stylistic things, and eslintrcMaximum has absolutely everything. Both .eslintrcMinimum and .eslintrcMaximum depend on an additional dependency called eslint-plugin-require-path-exists which must be npm installed before use into your package.json. This checks paths to ensure the items you are require("somepackage"), actually exist.
 
 In the interest of ensuring a quality codebase most of these styles will be built into a linter that can catch anything that is missed by the human eye, but inevitably some of these things either cannot be checked easily by a linter, or will not be included for purposes of reducing strictness, and it is up to the developer to follow the guidelines.
 
