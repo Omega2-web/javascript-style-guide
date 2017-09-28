@@ -90,13 +90,27 @@ var foo = "bar";
 
 ## Opening braces go on the same line
 
-Your opening braces go on the same line as the statement.
+Your opening braces go on the same line as the statement, One True Brace Style, as opposed to Stroustrup, or Allman
 
 *Right:*
 
 ```js
 if (true) {
   console.log('winning');
+}
+```
+```
+if (foo) {
+  bar();
+} else {
+  baz();
+}
+```
+```
+try {
+  somethingRisky();
+} catch(e) {
+  handleError();
 }
 ```
 
@@ -107,6 +121,33 @@ if (true)
 {
   console.log('losing');
 }
+```
+```
+if (foo) {
+  bar();
+}
+else {
+  baz();
+}
+```
+```
+try
+{
+  somethingRisky();
+} catch(e)
+{
+  handleError();
+}
+
+try
+{
+  somethingRisky();
+} 
+catch(e)
+{
+  handleError();
+}
+
 ```
 
 Also, notice the use of whitespace before and after the condition statement.
