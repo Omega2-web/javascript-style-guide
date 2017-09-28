@@ -11,6 +11,8 @@ This guide was originally created by [Felix Geisendörfer](http://felixge.de/) a
 license. It has been modified to suit the preferences of the CRUX Informatics development 
 team.
 
+In the interest of ensuring a quality codebase most of these styles will be built into a linter that can catch anything that is missed by the human eye, but inevitably some of these things either cannot be checked easily by a linter, or will not be included for purposes of reducing strictness, and it is up to the developer to follow the guidelines.
+
 ## Table of contents
 
 * [1 tab for indention](#1-tab-for-indention)
