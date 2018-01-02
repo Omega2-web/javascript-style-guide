@@ -74,7 +74,7 @@ your editor supports that, right?
 
 ## Use single quotes
 
-Use single quotes, unless you are writing JSON.
+Use single quotes, unless you are writing JSON **or HTML**.
 
 *Right:*
 
@@ -339,8 +339,8 @@ keys when your interpreter complains:
 ```js
 var a = ['hello', 'world'];
 var b = {
-  good: 'code',
-  'is generally': 'pretty',
+  'good': 'code',
+  'is_generally': 'pretty'
 };
 ```
 
@@ -351,7 +351,7 @@ var a = [
   'hello', 'world'
 ];
 var b = {"good": 'code'
-        , is generally: 'pretty'
+        , is generally: 'pretty',
         };
 ```
 
@@ -502,30 +502,4 @@ req.on('end', function onEnd() {
 req.on('end', function() {
   console.log('losing');
 });
-```
-
-## No nested closures
-
-Use closures, but don't nest them. Otherwise your code will become a mess.
-
-*Right:*
-
-```js
-setTimeout(function() {
-  client.connect(afterConnect);
-}, 1000);
-
-function afterConnect() {
-  console.log('winning');
-}
-```
-
-*Wrong:*
-
-```js
-setTimeout(function() {
-  client.connect(function() {
-    console.log('losing');
-  });
-}, 1000);
 ```
